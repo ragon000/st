@@ -15,7 +15,7 @@
         src = ./.;
       });
     };
-    overlay = final: prev: rec {
+    overlay = flake-utils.lib.flattenTree final: prev: rec {
       st-ragon = packages.${prev.system}.st;
     };
     defaultPackage = packages.st;
